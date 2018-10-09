@@ -305,6 +305,10 @@
       if (canvg) canvg(canvas, src);
       else context.drawImage(src, 0, 0);
 
+      context.globalCompositeOperation = "destination-over";
+      context.fillStyle="white";
+      context.fillRect(0,0,canvas.width,canvas.height);
+
       let png;
       try {
         png = canvas.toDataURL(encoderType, encoderOptions);
